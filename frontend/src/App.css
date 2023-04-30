@@ -1,1 +1,32 @@
+header {
+  background-color: #404040;
+  padding: 1rem;
+}
 
+header a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+main {
+  padding: 1rem;
+}
+
+.Products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Product {
+  border: 1px #404040 solid;
+  margin: 1rem;
+  justify-content: center;
+}
+.Product img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.Product-info {
+  padding: 1rem;
+}
