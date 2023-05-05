@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 // import data from '../../data';
-import logger from 'use-reducer-logger';
+// import logger from 'use-reducer-logger';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ const reducer = (state, action) => {
 };
 
 export default function HomeScreen() {
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
     products: [],
     loading: true,
     error: '',

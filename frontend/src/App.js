@@ -1,12 +1,21 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HomeScreen from './components/Screen/HomeScreen';
 import ProductScreen from './components/Screen/ProductScreen';
+import { Navbar, Container } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 function App() {
   return (
-    <div>
+    <div className="d-flex flex-column site-container">
       <header>
-        <Link to="/">Amazon</Link>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <LinkContainer to="/">
+              <Navbar.Brand>Amazon</Navbar.Brand>
+            </LinkContainer>
+          </Container>
+        </Navbar>
+        {/* <Link to="/">Amazon</Link> */}
       </header>
       <main>
         <Routes>
@@ -14,6 +23,9 @@ function App() {
           <Route path="/" element={<HomeScreen />} />
         </Routes>
       </main>
+      <footer>
+        <div className="text-center">All Rights Reserved</div>
+      </footer>
     </div>
   );
 }
