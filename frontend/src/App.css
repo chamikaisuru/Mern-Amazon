@@ -16,15 +16,23 @@ main {
   flex: 1;
 }
 
+.btn-primary {
+  background-color: #ffc000;
+  color: black;
+}
+
 .Products {
   display: flex;
   flex-wrap: wrap;
 }
 
 .Product {
-  border: 1px #404040 solid;
+  /* border: 1px #404040 solid; */
   margin: 1rem;
   justify-content: center;
+}
+.rating span {
+  color: #ffc000;
 }
 .Product img {
   width: 100%;
