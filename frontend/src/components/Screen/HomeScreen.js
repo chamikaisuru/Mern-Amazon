@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../Product';
 import { Helmet } from 'react-helmet-async';
+import LoadBox from '../LoadBox';
+import MessageBox from '../MessageBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,9 +49,9 @@ export default function HomeScreen() {
       <h1>Product List</h1>
       <div className="Products">
         {loading ? (
-          <div>Loading...</div>
+          <LoadBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
             {products.map((product) => (

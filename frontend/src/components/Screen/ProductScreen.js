@@ -4,6 +4,9 @@ import { useParams } from 'react-router-dom';
 import { Row, Col, ListGroup, Badge, Button } from 'react-bootstrap';
 import Rating from '../Rating';
 import { Helmet } from 'react-helmet-async';
+import LoadBox from '../LoadBox';
+import MessageBox from '../MessageBox';
+import { getError } from '../Utils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,16 +38,17 @@ export default function ProductScreen() {
         const result = await axios.get(`/api/product/slug/${slug}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (error) {
-        dispatch({ type: 'ERROR', payload: error.message });
+        dispatch({ type: 'ERROR', payload: getError(error) });
+        // dispatch({ type: 'ERROR', payload: error.message.status });
       }
     };
     fetchData();
   }, [slug]);
 
   return loading ? (
-    <div>Loading...</div>
+    <LoadBox />
   ) : error ? (
-    <div>{error}</div>
+    <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <Row>
       <Col md={6}>
@@ -54,7 +58,7 @@ export default function ProductScreen() {
         <ListGroup variant="flush">
           <ListGroup.Item>
             <Helmet>
-              <title> {product.name}</title>
+              <title>{product.name}</title>
             </Helmet>
             <h1>{product.name}</h1>
           </ListGroup.Item>
