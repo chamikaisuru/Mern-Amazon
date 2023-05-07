@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../Product';
+import { Helmet } from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -40,6 +41,9 @@ export default function HomeScreen() {
 
   return (
     <div>
+      <Helmet>
+        <title>Amazon</title>
+      </Helmet>
       <h1>Product List</h1>
       <div className="Products">
         {loading ? (

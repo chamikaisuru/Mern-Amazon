@@ -31,6 +31,14 @@ main {
   margin: 1rem;
   justify-content: center;
 }
+
+.img-large {
+  max-width: 100%;
+}
+.list-group-item {
+  border-bottom: none;
+}
+
 .rating span {
   color: #ffc000;
 }
