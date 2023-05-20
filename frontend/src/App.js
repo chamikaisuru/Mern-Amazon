@@ -9,9 +9,8 @@ import { useContext } from 'react';
 
 function App() {
   const { state } = useContext(Store);
-
-  // const { Cart } = state;
-  console.log('state ', state.Cart);
+  const { Cart } = state;
+  console.log('Cart ', Cart);
 
   return (
     <div className="d-flex flex-column site-container">
@@ -25,11 +24,11 @@ function App() {
               <Link to="/cart" className="nav-Link">
                 Cart
                 {/* <Badge pill bg="danger">
-                  {Cart.CartItems.length}
+                  {Cart.CartItems.reduce((a, c) => a + c.quantity, 0)}
                 </Badge> */}
-                {state.Cart.CartItems.length > 0 && (
+                {Cart.CartItems.length > 0 && (
                   <Badge pill bg="danger">
-                    {state.Cart.CartItems.length}
+                    {Cart.CartItems.reduce((a, c) => a + c.quantity, 0)}
                   </Badge>
                 )}
               </Link>
