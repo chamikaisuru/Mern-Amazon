@@ -20,7 +20,14 @@ main {
   background-color: #ffc000;
   color: black;
 }
+.custom {
+  background-color: #ffc000;
+  color: black;
+}
 
+.btn-primary[disabled] :hover {
+  background-color: blue;
+}
 .Products {
   display: flex;
   flex-wrap: wrap;
@@ -49,4 +56,8 @@ main {
 
 .Product-info {
   padding: 1rem;
+}
+
+.img-thumbnail {
+  height: 80px;
 }
