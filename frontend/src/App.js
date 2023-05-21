@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import HomeScreen from './components/Screen/HomeScreen';
 import ProductScreen from './components/Screen/ProductScreen';
+import SigninScreen from './components/Screen/SigninScreen';
 import { Navbar, Container, Nav, Badge } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Store } from './components/Store';
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/product/:slug" element={<ProductScreen />} />
             <Route path="/Cart" element={<CartScreen />} />
+            <Route path="/Signin" element={<SigninScreen />} />
             <Route path="/" element={<HomeScreen />} />
           </Routes>
         </Container>
